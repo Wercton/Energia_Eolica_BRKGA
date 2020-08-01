@@ -52,12 +52,12 @@ def criar_populacao(individuos, genes, nova=False):
     for _ in range(individuos):
         cromossomo = []
         for i in range(genes):
-            x = round(random.uniform(limites_cromossomo[i][0][0], limites_cromossomo[i][0][1]), 2)
-            y = round(random.uniform(limites_cromossomo[i][1][0], limites_cromossomo[i][1][1]), 2)
+            x = round(random.uniform(limites_cromossomo[i][0][1]+0.04, limites_cromossomo[i][0][0]-0.04), 2)
+            y = round(random.uniform(limites_cromossomo[i][1][1]+0.04, limites_cromossomo[i][1][0]-0.04), 2)
             cromossomo.append([x, y])
         populacao.append([cromossomo])
-    if nova:
-        populacao = np.squeeze(np.asanyarray(populacao))  # convertendo listas em array somente se for uma nova,
+    '''if nova:
+        populacao = np.squeeze(np.asanyarray(populacao))  # convertendo listas em array somente se for uma nova,'''
 
     return populacao
 

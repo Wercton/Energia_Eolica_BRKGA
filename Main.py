@@ -1,6 +1,6 @@
 import random
 import sys
-import numpy  # ???
+import numpy as np  # ???
 import Populacao
 import Selecao
 
@@ -9,36 +9,53 @@ def brkga(individuos, genes, geracao, mutantes_quantidade):
 
     melhor_solucao_geral = 0
 
-    for _ in range(geracao):
+    for _ in range(1):
 
         populacao = Populacao.criar_populacao(individuos, genes, nova=True)
         print(populacao)
+        print(len(populacao))
 
         for _ in range(geracao):
 
+            populacao = np.squeeze(np.asanyarray(populacao))
             fitness_populacao = Populacao.geral_fitness(populacao)
+            print('-' * 100)
+            populacao = populacao.tolist()
+
+            nova_populacao = []
             elite, nao_elite = Selecao.separar_elite(populacao, fitness_populacao)  # retornando alguns arrays em listas
-            nova_populacao = elite
+            [nova_populacao.append(cromossomo[0]) for cromossomo in elite]  # elite tem que vir com enumeracao do fitness
+
             mutante = Populacao.criar_populacao(mutantes_quantidade, genes)
-            nova_populacao += mutante
+            [nova_populacao.append(*cromossomo) for cromossomo in mutante]
 
             for _ in range(individuos - len(nova_populacao)):
 
-                pai1 = escolher_pai(elite)
-                pai2 = escolher_pai(nao_elite)
-                filho = [[(0, 0) for _ in range(genes)]]
+                pai1 = Selecao.escolher_pai(elite)
+                pai2 = Selecao.escolher_pai(nao_elite)
 
-                for i in range(genes):
+                #print("\nPai1:", pai1)
+                #print("Pai2:", pai2, end="\n")
+
+                filho = []
+
+                for i in range(len(pai1)):
 
                     if random.random() > 0.5:
-                        filho[i] = pai1[i]
+                        filho.append(pai1[i])
                     else:
-                        filho[i] = pai2[i]
+                        filho.append(pai2[i])
 
-                nova_populacao += filho
+                #print("Filho:", filho)
 
-            populacao = nova_populacao()
+                nova_populacao.append(filho)
+
+            populacao = []
+            [populacao.append(cromossomo) for cromossomo in nova_populacao]
+
+
             melhor_solucao_geracao = max(fitness_populacao)
+            print(melhor_solucao_geracao)
 
             if melhor_solucao_geracao > melhor_solucao_geral:
                 melhor_solucao_geral = melhor_solucao_geracao
@@ -47,4 +64,4 @@ def brkga(individuos, genes, geracao, mutantes_quantidade):
 
 
 if __name__ == '__main__':
-    print(brkga(individuos=10, genes=50, geracao=2, mutantes_quantidade=2))
+    print(brkga(individuos=10, genes=50, geracao=20, mutantes_quantidade=2))
