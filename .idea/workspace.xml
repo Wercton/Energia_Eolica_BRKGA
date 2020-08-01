@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2b398ae-527a-496a-9e3f-b117eb4fd7fc" name="Default Changelist" comment="BRKGA completo">
-      <change afterPath="$PROJECT_DIR$/Reproducao.py" afterDir="false" />
+    <list default="true" id="d2b398ae-527a-496a-9e3f-b117eb4fd7fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Populacao.py" beforeDir="false" afterPath="$PROJECT_DIR$/Populacao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Selecao.py" beforeDir="false" afterPath="$PROJECT_DIR$/Selecao.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,34 +141,42 @@
       <option name="project" value="LOCAL" />
       <updated>1596259273951</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Quebra do algoritmo em mais funções para que se torne mais legível.">
+      <created>1596309734099</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1596309734099</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="BRKGA completo" />
-    <option name="LAST_COMMIT_MESSAGE" value="BRKGA completo" />
+    <MESSAGE value="Quebra do algoritmo em mais funções para que se torne mais legível." />
+    <option name="LAST_COMMIT_MESSAGE" value="Quebra do algoritmo em mais funções para que se torne mais legível." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="282" y="0" key="CommitChangelistDialog2" timestamp="1596259312722">
+    <state x="282" y="0" key="CommitChangelistDialog2" timestamp="1596309732680">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="282" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1596259312722" />
-    <state width="1345" height="2" key="GridCell.Tab.0.bottom" timestamp="1596309493505">
+    <state x="282" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1596309732680" />
+    <state width="1345" height="9" key="GridCell.Tab.0.bottom" timestamp="1596315486274">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596309493505" />
-    <state width="1345" height="2" key="GridCell.Tab.0.center" timestamp="1596309493505">
+    <state width="1345" height="9" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596315486274" />
+    <state width="1345" height="9" key="GridCell.Tab.0.center" timestamp="1596315486274">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596309493505" />
-    <state width="1345" height="2" key="GridCell.Tab.0.left" timestamp="1596309493505">
+    <state width="1345" height="9" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596315486274" />
+    <state width="1345" height="9" key="GridCell.Tab.0.left" timestamp="1596315486274">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596309493505" />
-    <state width="1345" height="2" key="GridCell.Tab.0.right" timestamp="1596309493505">
+    <state width="1345" height="9" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596315486274" />
+    <state width="1345" height="9" key="GridCell.Tab.0.right" timestamp="1596315486274">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596309493505" />
+    <state width="1345" height="9" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596315486274" />
     <state width="1345" height="201" key="GridCell.Tab.1.bottom" timestamp="1596258637971">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -184,10 +193,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="201" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1596258637971" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1596309540152">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1596318855336">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596309540152" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596318855336" />
     <state x="612" y="185" key="com.intellij.ide.util.TipDialog" timestamp="1596307393186">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

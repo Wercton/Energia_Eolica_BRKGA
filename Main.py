@@ -1,7 +1,5 @@
-import random
 import matplotlib.pyplot as plt
-import sys
-import numpy as np  # ???
+import numpy as np
 import Populacao
 import Selecao
 import Reproducao
@@ -10,6 +8,7 @@ import Reproducao
 def brkga(individuos, genes, geracao, mutantes_quantidade):
 
     melhor_solucao_geral = [0, 0]
+    melhores_solucoes = []
 
     for _ in range(1):
 
@@ -21,27 +20,32 @@ def brkga(individuos, genes, geracao, mutantes_quantidade):
             fitness_populacao = Populacao.geral_fitness(populacao)
             populacao = populacao.tolist()  # torna o array lista outra vez
 
-            elite, nao_elite = Selecao.separar_elite(populacao, fitness_populacao)  # retornando alguns arrays em listas
+            elite, nao_elite = Selecao.separar_elite(populacao, fitness_populacao)
 
-            nova_populacao, populacao = [], []  # reinicio populacao que não será mais usada
-            [nova_populacao.append(cromossomo[0]) for cromossomo in elite]  # elite vem com enumeracao do fitness
+            populacao = []  # reinicio populacao para reutilizar como nova populacao
+            [populacao.append(cromossomo[0]) for cromossomo in elite]  # elite vem com enumeracao do fitness
             melhor_solucao_geracao = elite[0]
 
             mutante = Populacao.criar_populacao(mutantes_quantidade, genes)
-            [nova_populacao.append(*cromossomo) for cromossomo in mutante]
+            [populacao.append(*cromossomo) for cromossomo in mutante]
 
-            for _ in range(individuos - len(nova_populacao)):
+            for _ in range(individuos - len(populacao)):
 
-                nova_populacao.append(Reproducao.produzir_filho(elite, nao_elite))
-
-            [populacao.append(cromossomo) for cromossomo in nova_populacao]
+                populacao.append(Reproducao.produzir_filho(elite, nao_elite))
 
             exibir_dados(geracao_atual, melhor_solucao_geracao)
 
             if melhor_solucao_geracao[1] > melhor_solucao_geral[1]:
                 melhor_solucao_geral = melhor_solucao_geracao
 
-    return melhor_solucao_geral
+            melhores_solucoes.append(melhor_solucao_geral[1])
+            plt.plot(melhor_solucao_geral[1], geracao_atual)
+
+    print("\n\nFitness do melhor indíviduo encontrado:", melhor_solucao_geral[1])
+    print("Indivíduo: ", *[i for i in melhor_solucao_geral[0]], sep="\n")
+
+    plt.plot(melhores_solucoes)
+    plt.show()
 
 
 def exibir_dados(geracao, melhor_solucao_geracao):
@@ -51,7 +55,9 @@ def exibir_dados(geracao, melhor_solucao_geracao):
 
 if __name__ == '__main__':
 
-    melhor_solucao = brkga(individuos=10, genes=50, geracao=5, mutantes_quantidade=2)
-
-    print("\n\nFitness do melhor indíviduo encontrado:", melhor_solucao[1])
-    print("Indivíduo: ", *[i for i in melhor_solucao[0]], sep="\n")
+    while 1:
+        try:
+            brkga(individuos=10, genes=50, geracao=200, mutantes_quantidade=2)
+            break
+        except Exception as e:
+            print("Error Code:", e)
