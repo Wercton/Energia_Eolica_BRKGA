@@ -1,5 +1,4 @@
 import random
-import numpy as np
 import Funcao_fitness
 
 
@@ -56,8 +55,6 @@ def criar_populacao(individuos, genes, nova=False):
             y = round(random.uniform(limites_cromossomo[i][1][1]+0.04, limites_cromossomo[i][1][0]-0.04), 2)
             cromossomo.append([x, y])
         populacao.append([cromossomo])
-    '''if nova:
-        populacao = np.squeeze(np.asanyarray(populacao))  # convertendo listas em array somente se for uma nova,'''
 
     return populacao
 
@@ -69,7 +66,3 @@ def geral_fitness(populacao):
         todos_fitness.append(Funcao_fitness.fitness(populacao[i]))
 
     return todos_fitness
-
-
-def gerar_conjunto_mutante(quantidade):
-    pass
