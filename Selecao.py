@@ -9,7 +9,7 @@ def separar_elite(populacao, fitness_populacao):
     fitness_lista = list(enumerate(fitness_lista))
     fitness_lista = sorted(fitness_lista, key=lambda x: x[1])
 
-    for i in range((len(populacao)//2) - 1):
+    for i in range((len(populacao)//4)):
         indice = fitness_lista.pop()
         cromossomo = populacao[indice[0]]
         fitness_cromossomo = indice[1]

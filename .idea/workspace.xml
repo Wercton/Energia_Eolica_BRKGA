@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d2b398ae-527a-496a-9e3f-b117eb4fd7fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Funcao_fitness.py" beforeDir="false" afterPath="$PROJECT_DIR$/Funcao_fitness.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Populacao.py" beforeDir="false" afterPath="$PROJECT_DIR$/Populacao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Selecao.py" beforeDir="false" afterPath="$PROJECT_DIR$/Selecao.py" afterDir="false" />
@@ -148,35 +149,43 @@
       <option name="project" value="LOCAL" />
       <updated>1596309734099</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Plotando gráfico. Implementando try/catch temporiariamente.">
+      <created>1596318905249</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1596318905249</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="BRKGA completo" />
     <MESSAGE value="Quebra do algoritmo em mais funções para que se torne mais legível." />
-    <option name="LAST_COMMIT_MESSAGE" value="Quebra do algoritmo em mais funções para que se torne mais legível." />
+    <MESSAGE value="Plotando gráfico. Implementando try/catch temporiariamente." />
+    <option name="LAST_COMMIT_MESSAGE" value="Plotando gráfico. Implementando try/catch temporiariamente." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="282" y="0" key="CommitChangelistDialog2" timestamp="1596309732680">
+    <state x="374" y="0" key="CommitChangelistDialog2" timestamp="1596570678873">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="282" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1596309732680" />
-    <state width="1345" height="9" key="GridCell.Tab.0.bottom" timestamp="1596315486274">
+    <state x="374" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1596570678873" />
+    <state width="1345" height="183" key="GridCell.Tab.0.bottom" timestamp="1596542990147">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="9" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596315486274" />
-    <state width="1345" height="9" key="GridCell.Tab.0.center" timestamp="1596315486274">
+    <state width="1345" height="183" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596542990147" />
+    <state width="1345" height="183" key="GridCell.Tab.0.center" timestamp="1596542990147">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="9" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596315486274" />
-    <state width="1345" height="9" key="GridCell.Tab.0.left" timestamp="1596315486274">
+    <state width="1345" height="183" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596542990147" />
+    <state width="1345" height="183" key="GridCell.Tab.0.left" timestamp="1596542990147">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="9" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596315486274" />
-    <state width="1345" height="9" key="GridCell.Tab.0.right" timestamp="1596315486274">
+    <state width="1345" height="183" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596542990147" />
+    <state width="1345" height="183" key="GridCell.Tab.0.right" timestamp="1596542990147">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="9" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596315486274" />
+    <state width="1345" height="183" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596542990147" />
     <state width="1345" height="201" key="GridCell.Tab.1.bottom" timestamp="1596258637971">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -193,18 +202,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="201" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1596258637971" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1596318855336">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1596318918383">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596318855336" />
-    <state x="612" y="185" key="com.intellij.ide.util.TipDialog" timestamp="1596307393186">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596318918383" />
+    <state x="612" y="185" key="com.intellij.ide.util.TipDialog" timestamp="1596503342425">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="612" y="185" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1596307393186" />
+    <state x="612" y="185" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1596503342425" />
     <state x="492" y="280" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596309640297">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="492" y="280" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1596309640297" />
+    <state x="399" y="160" key="git4idea.merge.GitPullDialog" timestamp="1596570704990">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="399" y="160" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1596570704990" />
     <state x="687" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1596248682497">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

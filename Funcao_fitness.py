@@ -39,10 +39,10 @@ def fitness(helice):
     global omega
     global dens_ar
 
-    V = 12
+    V = 12  # velocidade do vento
     Omega = 634.56
-    omega = Omega * math.pi / 30
-    dens_ar = 1.225
+    omega = Omega * math.pi / 30  # velocidade da rotação de rpm para radianos
+    dens_ar = 1.225  # densidade do ar
 
     potenciaMaxima = torque(helice)
     return potenciaMaxima
@@ -60,15 +60,16 @@ def torque(helice):
     global Cd
     global dens_ar
 
-    turbine_R = 0.752
-    turbine_r = 0.150
-    turbine_nsec = 50
-    turbine_nb = 3
-    dr = (turbine_R - turbine_r) / (turbine_nsec - 1)
-    alfa0 = 4.3 * math.pi / 180
+    turbine_R = 0.752  # raio externo total da turbina
+    turbine_r = 0.150  # raio menor do centro, do "hub"
+    turbine_nsec = 50  # secções na qual dividiremos a pá
+    turbine_nb = 3  # número de pás
+    dr = (turbine_R - turbine_r) / (turbine_nsec - 1)  # calcular porção da turbina, tamanho
+    alfa0 = 4.3 * math.pi / 180  # ângulo de ataque; quanto maior, maior a sustentação (até certo ponto); entre a\
+    # linha de corda e o vento relativo médio
 
     T2 = 0
-    for i in range(turbine_nsec):
+    for i in range(turbine_nsec):  # calculo dos esforços para cada secção
         if i == 0:
             r_loc = turbine_r
             vraio = r_loc
@@ -79,12 +80,12 @@ def torque(helice):
         sigma_loc = (turbine_nb * helice[i][1]) / (2 * math.pi * r_loc)
         gama_loc = betam + alfa0
         alnew = fsolve(movang, 0)
-        dT = (helice[i][1]) * (Vr ** 2) * (Cl * sinb - Cd * cosb) * r_loc * dr
-        T2 = T2 + dT
+        dT = (helice[i][1]) * (Vr ** 2) * (Cl * sinb - Cd * cosb) * r_loc * dr  # calcula o torque da secção
+        T2 = T2 + dT  # soma dos esforços para obter o torque total da pá, e consequentemente a potência
 
     T = ((turbine_nb * dens_ar) / 2) * T2
     VT = T * 0.65
-    P = omega * VT
+    P = omega * VT  # ao multiplicar o torque total com omega, obtém-se a potência
     return P
 
 
@@ -177,8 +178,8 @@ def coeficiente3(alfa):
            0.075, 0.075, 0.075, 0.075, 0.075, 0.076, 0.076, 0.076, 0.077, 0.077,
            0.078]
 
-    Cd = interp1d(alfcl, vCd)(alfa)
-    Cl = interp1d(alfcl, vCl)(alfa)
+    Cd = interp1d(alfcl, vCd, fill_value="extrapolate")(alfa)
+    Cl = interp1d(alfcl, vCl, fill_value="extrapolate")(alfa)
 
     return Cl * .8, Cd * .8
 
