@@ -2,6 +2,10 @@ import numpy
 import math
 from scipy.interpolate import interp1d
 from scipy.optimize import fsolve
+from scipy.interpolate import make_interp_spline, BSpline
+import matplotlib.pyplot as plt
+
+plt.style.use('bmh')
 
 V = 0
 omega = 0
@@ -17,21 +21,51 @@ sigma_loc = 0
 
 
 def main():
-    helice = [[0.35, 0.157], [0.324, 0.153], [0.3, 0.149], [0.277, 0.146],
-              [0.257, 0.142], [0.238, 0.137], [0.22, 0.133], [0.204, 0.13],
-              [0.189, 0.126], [0.175, 0.122], [0.161, 0.118], [0.149, 0.115],
-              [0.138, 0.112], [0.127, 0.108], [0.117, 0.105], [0.107, 0.102],
-              [0.098, 0.1], [0.09, 0.097], [0.082, 0.094], [0.075, 0.092],
-              [0.068, 0.09], [0.061, 0.087], [0.055, 0.085], [0.049, 0.083],
-              [0.043, 0.081], [0.037, 0.079], [0.032, 0.078], [0.027, 0.076],
-              [0.023, 0.074], [0.018, 0.073], [0.014, 0.071], [0.01, 0.07],
-              [0.006, 0.068], [0.002, 0.067], [-0.002, 0.066], [-0.005, 0.064],
-              [-0.009, 0.063], [-0.012, 0.062], [-0.015, 0.061], [-0.018, 0.06],
-              [-0.021, 0.059], [-0.024, 0.058], [-0.026, 0.057], [-0.029, 0.056],
-              [-0.032, 0.055], [-0.034, 0.054], [-0.036, 0.053], [-0.039, 0.052],
-              [-0.041, 0.051], [-0.043, 0.05]]
+    helice3 = [[0.23, 0.16], [0.22, 0.17], [0.14, 0.06], [0.12, 0.06], [0.15, 0.08], [0.12, 0.08], [0.25, 0.14], [0.28, 0.08], [0.24, 0.14], [0.21, 0.15], [0.23, 0.17], [0.28, 0.1], [0.17, 0.18], [0.09, 0.16], [0.2, 0.16], [0.15, 0.19], [0.27, 0.18], [0.28, 0.07], [0.3, 0.12], [0.17, 0.17], [0.19, 0.2], [0.22, 0.19], [0.2, 0.2], [0.21, 0.16], [0.11, 0.19], [0.16, 0.18], [0.23, 0.16], [0.05, 0.15], [0.07, 0.09], [0.1, 0.14], [0.03, 0.16], [0.06, 0.12], [0.1, 0.19], [0.12, 0.15], [0.05, 0.2], [0.1, 0.19], [0.07, 0.14], [0.07, 0.16], [-0.01, 0.19], [-0.02, 0.16], [0.09, 0.19], [0.07, 0.18], [0.05, 0.18], [0.01, 0.1], [0.04, 0.18], [-0.03, 0.19], [-0.01, 0.18], [0.08, 0.19], [0.06, 0.19], [0.05, 0.07]]
 
-    print(fitness(helice))
+    helice = [[0.25, 0.13], [0.29, 0.19],
+    [0.26, 0.1], [0.29, 0.12], [0.3, 0.18], [0.27, 0.15], [0.3, 0.15], [0.29, 0.18], [0.29, 0.2], [0.29, 0.19],
+    [0.27, 0.19], [0.27, 0.2], [0.16, 0.18], [0.16, 0.18], [0.29, 0.2], [0.16, 0.19], [0.26, 0.19], [0.23, 0.18],
+    [0.12, 0.18], [0.22, 0.2], [0.15, 0.18], [0.19, 0.19], [0.22, 0.19], [0.18, 0.18], [0.17, 0.19], [0.12, 0.18],
+    [0.11, 0.2], [0.12, 0.19], [0.13, 0.17], [0.12, 0.19], [0.11, 0.19], [0.04, 0.19], [0.1, 0.19], [0.09, 0.2],
+    [0.08, 0.2], [0.12, 0.19], [0.11, 0.2], [0.02, 0.19], [0.06, 0.19], [0.06, 0.19], [0.07, 0.17], [0.06, 0.2],
+    [0.04, 0.19], [0.04, 0.19], [-0.02, 0.19], [-0.02, 0.2], [0.02, 0.19], [0.03, 0.17], [0.03, 0.19], [0.03, 0.2]]
+
+    fitness_grafico_potencia(helice3)
+    #print(fitness(helice))
+
+
+def fitness_grafico_potencia(helice):
+    global V
+    global omega
+    global dens_ar
+
+    V = 20  # velocidade do vento
+    omega = 634.56
+    omega = omega * math.pi / 30  # velocidade da rotação de rpm para radianos
+    dens_ar = 1.225  # densidade do ar
+    potencias_obtidas = []
+
+    for vento in range(10, V + 1):
+        potencia_maxima = torque(helice, vento)
+        if potencia_maxima > 0:
+            potencias_obtidas.append(torque(helice, vento))
+        else:
+            potencias_obtidas.append(0)
+
+    T = numpy.array([i for i in range(10, V + 1)])
+    xnew = numpy.linspace(T.min(), T.max(), 300)
+
+    spl = make_interp_spline([i for i in range(10, V + 1)], potencias_obtidas, k=3)
+    power_smooth = spl(xnew)
+
+    plt.plot(xnew, power_smooth)
+    plt.title("Curva de Potência")
+    plt.ylabel("Potência (W)")
+    plt.xlabel("Velocidade do vento (m/s)")
+    plt.show()
+
+    return potencias_obtidas[-1]
 
 
 def fitness(helice):
@@ -44,11 +78,11 @@ def fitness(helice):
     omega = Omega * math.pi / 30  # velocidade da rotação de rpm para radianos
     dens_ar = 1.225  # densidade do ar
 
-    potenciaMaxima = torque(helice)
+    potenciaMaxima = torque(helice, V)
     return potenciaMaxima
 
 
-def torque(helice):
+def torque(helice, V):
     global r_loc
     global sigma_loc
     global omega
@@ -68,20 +102,21 @@ def torque(helice):
     alfa0 = 4.3 * math.pi / 180  # ângulo de ataque; quanto maior, maior a sustentação (até certo ponto); entre a\
     # linha de corda e o vento relativo médio
 
+    r_loc = turbine_r
+    vraio = r_loc
     T2 = 0
+
     for i in range(turbine_nsec):  # calculo dos esforços para cada secção
-        if i == 0:
-            r_loc = turbine_r
-            vraio = r_loc
-        else:
-            vraio = vraio + dr
-            r_loc = vraio
+
         betam = helice[i][0]
         sigma_loc = (turbine_nb * helice[i][1]) / (2 * math.pi * r_loc)
         gama_loc = betam + alfa0
-        alnew = fsolve(movang, 0)
+        alnew = fsolve(movang, 0, V)
         dT = (helice[i][1]) * (Vr ** 2) * (Cl * sinb - Cd * cosb) * r_loc * dr  # calcula o torque da secção
         T2 = T2 + dT  # soma dos esforços para obter o torque total da pá, e consequentemente a potência
+
+        vraio = vraio + dr
+        r_loc = vraio
 
     T = ((turbine_nb * dens_ar) / 2) * T2
     VT = T * 0.65
@@ -89,7 +124,7 @@ def torque(helice):
     return P
 
 
-def movang(al):
+def movang(al, V):
     global gama_loc
     global r_loc
     global sigma_loc
@@ -98,7 +133,7 @@ def movang(al):
     global Cl
     global Cd
     global omega
-    global V
+    # global V
     global Vr
 
     Vt = omega * r_loc * (1 + al)
@@ -185,4 +220,7 @@ def coeficiente3(alfa):
 
 
 if __name__ == "__main__":
+    '''plt.plot(melhores_solucoes)
+    plt.show()'''
     main()
+
