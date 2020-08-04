@@ -4,6 +4,8 @@ import Populacao
 import Selecao
 import Reproducao
 
+plt.style.use('dark_background')
+
 
 def brkga(individuos, genes, geracao, mutantes_quantidade):
 
@@ -15,6 +17,8 @@ def brkga(individuos, genes, geracao, mutantes_quantidade):
         populacao = Populacao.criar_populacao(individuos, genes, nova=True)
 
         for geracao_atual in range(geracao):
+
+            print(".")
 
             populacao = np.squeeze(np.asanyarray(populacao))  # transforma população em array numpy
             fitness_populacao = Populacao.geral_fitness(populacao)
@@ -45,7 +49,10 @@ def brkga(individuos, genes, geracao, mutantes_quantidade):
     print("Indivíduo: ", *[i for i in melhor_solucao_geral[0]], sep="\n")
 
     plt.plot(melhores_solucoes)
+    fig1 = plt.gcf()
     plt.show()
+    plt.draw()
+    fig1.savefig('demo.png', transparent=True)
 
 
 def exibir_dados(geracao, melhor_solucao_geracao):
@@ -55,9 +62,7 @@ def exibir_dados(geracao, melhor_solucao_geracao):
 
 if __name__ == '__main__':
 
-    while 1:
-        try:
-            brkga(individuos=10, genes=50, geracao=200, mutantes_quantidade=2)
-            break
-        except Exception as e:
-            print("Error Code:", e)
+    try:
+        brkga(individuos=20, genes=50, geracao=5000, mutantes_quantidade=4)
+    except Exception as e:
+        print("Error Code:", e)
