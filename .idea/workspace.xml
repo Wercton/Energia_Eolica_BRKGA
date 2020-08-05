@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2b398ae-527a-496a-9e3f-b117eb4fd7fc" name="Default Changelist" comment="Implementação do gráfico de potência. dia 05/08">
+    <list default="true" id="d2b398ae-527a-496a-9e3f-b117eb4fd7fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
@@ -211,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596651024828</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="roda ai tio">
+      <created>1596663803878</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1596663803878</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -221,29 +228,30 @@
     <MESSAGE value="Plotando gráfico. Algoritmo produzindo o esperado." />
     <MESSAGE value="Implementação do gráfico de potência." />
     <MESSAGE value="Implementação do gráfico de potência. dia 05/08" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementação do gráfico de potência. dia 05/08" />
+    <MESSAGE value="roda ai tio" />
+    <option name="LAST_COMMIT_MESSAGE" value="roda ai tio" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="374" y="0" key="CommitChangelistDialog2" timestamp="1596663778393">
+    <state x="374" y="0" key="CommitChangelistDialog2" timestamp="1596663801685">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="374" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1596663778393" />
-    <state width="1345" height="94" key="GridCell.Tab.0.bottom" timestamp="1596663745899">
+    <state x="374" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1596663801685" />
+    <state width="1345" height="94" key="GridCell.Tab.0.bottom" timestamp="1596663886035">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="94" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596663745899" />
-    <state width="1345" height="94" key="GridCell.Tab.0.center" timestamp="1596663745898">
+    <state width="1345" height="94" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596663886035" />
+    <state width="1345" height="94" key="GridCell.Tab.0.center" timestamp="1596663886035">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="94" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596663745898" />
-    <state width="1345" height="94" key="GridCell.Tab.0.left" timestamp="1596663745898">
+    <state width="1345" height="94" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596663886035" />
+    <state width="1345" height="94" key="GridCell.Tab.0.left" timestamp="1596663886035">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="94" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596663745898" />
-    <state width="1345" height="94" key="GridCell.Tab.0.right" timestamp="1596663745899">
+    <state width="1345" height="94" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596663886035" />
+    <state width="1345" height="94" key="GridCell.Tab.0.right" timestamp="1596663886035">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="94" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596663745899" />
+    <state width="1345" height="94" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596663886035" />
     <state width="1345" height="201" key="GridCell.Tab.1.bottom" timestamp="1596258637971">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

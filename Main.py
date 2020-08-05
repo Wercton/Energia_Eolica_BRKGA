@@ -1,13 +1,12 @@
 import matplotlib.pyplot as plt
-import warnings
+from warnings import filterwarnings
 import numpy as np
 import Populacao
 import Selecao
 import Reproducao
-from random import randrange
 
 plt.style.use('bmh')
-warnings.filterwarnings('ignore', 'The iteration is not making good progress')
+filterwarnings('ignore', 'The iteration is not making good progress')
 
 code = 0
 
@@ -81,5 +80,5 @@ def plottar_grafico(melhores_solucoes, individuos, mutantes_quantidade):
 
 if __name__ == '__main__':
     for _ in range(100):
-        brkga(individuos=10, genes=50, geracao=5, mutantes_quantidade=1)
+        brkga(individuos=50, genes=50, geracao=100, mutantes_quantidade=7)
 
