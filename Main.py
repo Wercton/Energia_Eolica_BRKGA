@@ -5,7 +5,6 @@ import Populacao
 import Selecao
 import Reproducao
 
-# plt.style.use('dark_background')
 plt.style.use('bmh')
 warnings.filterwarnings('ignore', 'The iteration is not making good progress')
 
@@ -46,12 +45,11 @@ def brkga(individuos, genes, geracao, mutantes_quantidade):
                 melhor_solucao_geral = melhor_solucao_geracao
 
             melhores_solucoes.append(melhor_solucao_geral[1])
-            plt.plot(melhor_solucao_geral[1], geracao_atual)
 
     print("\n\nFitness do melhor indíviduo encontrado:", melhor_solucao_geral[1])
     print("Indivíduo: ", [i for i in melhor_solucao_geral[0]], sep="\n")
 
-    plt.plot(melhores_solucoes)
+    plt.plot([i for i in range(len(melhores_solucoes))], melhores_solucoes)
     fig1 = plt.gcf()
     plt.show()
     plt.draw()
@@ -61,14 +59,9 @@ def brkga(individuos, genes, geracao, mutantes_quantidade):
 def exibir_dados(geracao, melhor_solucao_geracao):
     print("Geração", geracao, "-" * 100)
     print("Melhor solução:", melhor_solucao_geracao[1])
-    if melhor_solucao_geracao[1] > 800:
-        print(melhor_solucao_geracao[0])
 
 
 if __name__ == '__main__':
 
-    try:
-        brkga(individuos=10, genes=50, geracao=50, mutantes_quantidade=2)
-    except Exception as e:
-        print("Error Code:", e)
-    #print([i for i in range(1, 200+1)])
+        brkga(individuos=50, genes=50, geracao=100, mutantes_quantidade=10)
+
