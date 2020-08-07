@@ -18,7 +18,7 @@ def brkga(individuos, genes, geracao, mutantes_quantidade):
 
     for _ in range(1):
 
-        populacao = Populacao.criar_populacao(individuos, genes, nova=True)
+        populacao = Populacao.criar_populacao(individuos, genes)
 
         for geracao_atual in range(geracao):
 
@@ -70,8 +70,8 @@ def plottar_grafico(melhores_solucoes, individuos, mutantes_quantidade):
     fig1 = plt.gcf()
     # plt.show()
     plt.draw()
-    nome_arquivo = "graficos/conv" + str(individuos) + "indiv" + str(mutantes_quantidade) + "mut" + "_code" + str(code)
-    fig1.savefig(nome_arquivo + "tran", transparent=True)
+    nome_arquivo = "graficos/conv" + str(individuos) + "indiv" + str(mutantes_quantidade) + "mut" + "_Pcode" + str(code)
+    # fig1.savefig(nome_arquivo + "tran", transparent=True)  # para salvar fig sem background
     fig1.savefig(nome_arquivo)
     plt.cla()
 
@@ -80,5 +80,4 @@ def plottar_grafico(melhores_solucoes, individuos, mutantes_quantidade):
 
 if __name__ == '__main__':
     for _ in range(100):
-        brkga(individuos=50, genes=50, geracao=100, mutantes_quantidade=7)
-
+        brkga(individuos=50, genes=50, geracao=100, mutantes_quantidade=3)
