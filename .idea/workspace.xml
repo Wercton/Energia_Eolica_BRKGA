@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Funcao_fitness.py" beforeDir="false" afterPath="$PROJECT_DIR$/Funcao_fitness.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Populacao.py" beforeDir="false" afterPath="$PROJECT_DIR$/Populacao.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="atualizações" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,10 +36,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
-  <component name="RunManager" selected="Python.Funcao_fitness">
+  <component name="RunManager" selected="Python.Main">
     <configuration name="Funcao_fitness" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Energia_Heolica_BRKGA" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -125,8 +127,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Funcao_fitness" />
         <item itemvalue="Python.Main" />
+        <item itemvalue="Python.Funcao_fitness" />
         <item itemvalue="Python.Selecao" />
         <item itemvalue="Python.funcao_fitness" />
       </list>
@@ -197,7 +199,35 @@
       <option name="project" value="LOCAL" />
       <updated>1596582330837</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implementação do gráfico de potência. dia 05/08">
+      <created>1596632910507</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1596632910507</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Implementação do gráfico de potência. dia 05/08">
+      <created>1596651024828</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1596651024828</updated>
+    </task>
+    <task id="LOCAL-00009" summary="roda ai tio">
+      <created>1596663803878</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1596663803878</updated>
+    </task>
+    <task id="LOCAL-00010" summary="roda ai tio">
+      <created>1596663907201</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1596663907201</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -206,29 +236,31 @@
     <MESSAGE value="Plotando gráfico. Implementando try/catch temporiariamente." />
     <MESSAGE value="Plotando gráfico. Algoritmo produzindo o esperado." />
     <MESSAGE value="Implementação do gráfico de potência." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementação do gráfico de potência." />
+    <MESSAGE value="Implementação do gráfico de potência. dia 05/08" />
+    <MESSAGE value="roda ai tio" />
+    <option name="LAST_COMMIT_MESSAGE" value="roda ai tio" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="374" y="0" key="CommitChangelistDialog2" timestamp="1596582329399">
+    <state x="374" y="0" key="CommitChangelistDialog2" timestamp="1596663906203">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="374" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1596582329399" />
-    <state width="1345" height="120" key="GridCell.Tab.0.bottom" timestamp="1596594753731">
+    <state x="374" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1596663906203" />
+    <state width="1345" height="219" key="GridCell.Tab.0.bottom" timestamp="1596758604599">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="120" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596594753731" />
-    <state width="1345" height="120" key="GridCell.Tab.0.center" timestamp="1596594753731">
+    <state width="1345" height="219" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596758604599" />
+    <state width="1345" height="219" key="GridCell.Tab.0.center" timestamp="1596758604599">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="120" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596594753731" />
-    <state width="1345" height="120" key="GridCell.Tab.0.left" timestamp="1596594753731">
+    <state width="1345" height="219" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596758604599" />
+    <state width="1345" height="219" key="GridCell.Tab.0.left" timestamp="1596758604599">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="120" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596594753731" />
-    <state width="1345" height="120" key="GridCell.Tab.0.right" timestamp="1596594753731">
+    <state width="1345" height="219" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596758604599" />
+    <state width="1345" height="219" key="GridCell.Tab.0.right" timestamp="1596758604599">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="120" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596594753731" />
+    <state width="1345" height="219" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596758604599" />
     <state width="1345" height="201" key="GridCell.Tab.1.bottom" timestamp="1596258637971">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -245,14 +277,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="201" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1596258637971" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1596632820724">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1596663962017">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596632820724" />
-    <state x="612" y="185" key="com.intellij.ide.util.TipDialog" timestamp="1596632797884">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596663962017" />
+    <state x="612" y="185" key="com.intellij.ide.util.TipDialog" timestamp="1596758114163">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="612" y="185" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1596632797884" />
+    <state x="612" y="185" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1596758114163" />
     <state x="492" y="280" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596309640297">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
