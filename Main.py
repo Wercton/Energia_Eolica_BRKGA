@@ -4,8 +4,8 @@ import numpy as np
 import Populacao
 import Selecao
 import Reproducao
+from Brkga import BRKGA
 
-plt.style.use('bmh')
 filterwarnings('ignore', 'The iteration is not making good progress')
 
 code = 0
@@ -21,7 +21,7 @@ def brkga(individuos, genes, geracao, mutantes_quantidade):
         populacao = Populacao.criar_populacao(individuos, genes)
 
         for geracao_atual in range(geracao):
-
+            
             populacao = np.squeeze(np.asanyarray(populacao))  # transforma população em array numpy
             fitness_populacao = Populacao.geral_fitness(populacao)
             populacao = populacao.tolist()  # torna o array lista outra vez
@@ -36,7 +36,6 @@ def brkga(individuos, genes, geracao, mutantes_quantidade):
             [populacao.append(*cromossomo) for cromossomo in mutante]
 
             for _ in range(individuos - len(populacao)):
-
                 populacao.append(Reproducao.produzir_filho(elite, nao_elite))
 
             # exibir_dados(geracao_atual, melhor_solucao_geracao)
@@ -79,5 +78,11 @@ def plottar_grafico(melhores_solucoes, individuos, mutantes_quantidade):
 
 
 if __name__ == '__main__':
-    for _ in range(100):
-        brkga(individuos=50, genes=50, geracao=100, mutantes_quantidade=3)
+    '''for _ in range(100):
+        brkga(individuos=10, genes=50, geracao=10, mutantes_quantidade=3)
+    '''
+
+    brkga = BRKGA(generations=100, individuos=50, genes=50, qtd_mutations=7)
+    brkga.plottar_grafico()
+    brkga.gerar_relatorio()
+    
