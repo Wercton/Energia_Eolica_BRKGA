@@ -23,36 +23,107 @@ sigma_loc = 0
 def main():
 
     helice1 = [[0.23, 0.16], [0.22, 0.17], [0.14, 0.06], [0.12, 0.06], [0.15, 0.08], [0.12, 0.08], [0.25, 0.14], [0.28, 0.08], [0.24, 0.14], [0.21, 0.15], [0.23, 0.17], [0.28, 0.1], [0.17, 0.18], [0.09, 0.16], [0.2, 0.16], [0.15, 0.19], [0.27, 0.18], [0.28, 0.07], [0.3, 0.12], [0.17, 0.17], [0.19, 0.2], [0.22, 0.19], [0.2, 0.2], [0.21, 0.16], [0.11, 0.19], [0.16, 0.18], [0.23, 0.16], [0.05, 0.15], [0.07, 0.09], [0.1, 0.14], [0.03, 0.16], [0.06, 0.12], [0.1, 0.19], [0.12, 0.15], [0.05, 0.2], [0.1, 0.19], [0.07, 0.14], [0.07, 0.16], [-0.01, 0.19], [-0.02, 0.16], [0.09, 0.19], [0.07, 0.18], [0.05, 0.18], [0.01, 0.1], [0.04, 0.18], [-0.03, 0.19], [-0.01, 0.18], [0.08, 0.19], [0.06, 0.19], [0.05, 0.07]]
-
-    fitness_grafico_potencia(helice1)
+    # helice1 = [[0.35, 0.157], [0.324, 0.153], [0.3, 0.149], [0.277, 0.146], 
+    #         [0.257, 0.142], [0.238, 0.137], [0.22, 0.133], [0.204, 0.13], 
+    #         [0.189, 0.126], [0.175, 0.122], [0.161, 0.118], [0.149, 0.115], 
+    #         [0.138, 0.112], [0.127, 0.108], [0.117, 0.105], [0.107, 0.102], 
+    #         [0.098, 0.1], [0.09, 0.097], [0.082, 0.094], [0.075, 0.092], 
+    #         [0.068, 0.09], [0.061, 0.087], [0.055, 0.085], [0.049, 0.083], 
+    #         [0.043, 0.081], [0.037, 0.079], [0.032, 0.078], [0.027, 0.076], 
+    #         [0.023, 0.074], [0.018, 0.073], [0.014, 0.071], [0.01, 0.07], 
+    #         [0.006, 0.068], [0.002, 0.067], [-0.002, 0.066], [-0.005, 0.064], 
+    #         [-0.009, 0.063], [-0.012, 0.062], [-0.015, 0.061], [-0.018, 0.06], 
+    #         [-0.021, 0.059], [-0.024, 0.058], [-0.026, 0.057], [-0.029, 0.056], 
+    #         [-0.032, 0.055], [-0.034, 0.054], [-0.036, 0.053], [-0.039, 0.052], 
+    #         [-0.041, 0.051], [-0.043, 0.05]]
+    # fitness_grafico_potencia(helice1)
+    # helice1 = [[0.28, 0.13], [0.25, 0.08], [0.3, 0.11], [0.23, 0.13], [0.2, 0.07], [0.08, 0.11], [0.27, 0.17], [0.26, 0.15], [0.03, 0.06], [0.23, 0.13], [0.15, 0.13], [0.27, 0.19], [0.27, 0.18], [0.2, 0.17], [0.22, 0.18], [0.1, 0.16], [0.22, 0.16], [0.24, 0.1], [0.07, 0.2], [0.15, 0.18], [0.25, 0.08], [0.15, 0.18], [0.17, 0.19], [0.1, 0.16], [0.04, 0.18], [0.03, 0.19], [0.17, 0.19], [0.15, 0.16], [0.02, 0.17], [0.08, 0.19], [0.03, 0.11], [0.09, 0.18], [0.11, 0.17], [0.0, 0.16], [0.08, 0.2], [0.02, 0.19], [0.01, 0.17], [0.09, 0.18], [0.09, 0.16], [0.1, 0.13], [0.07, 0.18], [0.08, 0.14], [0.05, 0.16], [0.07, 0.1], [0.07, 0.16], [-0.0, 0.17], [0.07, 0.2], [0.04, 0.11], [0.01, 0.14], [-0.02, 0.19]]
+    
+    # gerar_grafico_potencia(helice1)
     # print(fitness(helice1))
+    
+    # rkga
+    # helice = [[0.29, 0.18], [0.26, 0.06], [0.27, 0.06], [0.27, 0.16], [0.29, 0.18], [0.29, 0.18], [0.26, 0.19], [0.27, 0.19], [0.26, 0.19], [0.26, 0.13], [0.25, 0.18], [0.28, 0.19], [0.18, 0.2], [0.2, 0.19], [0.19, 0.18], [0.29, 0.2], [0.12, 0.2], [0.1, 0.19], [0.21, 0.18], [0.13, 0.19], [0.21, 0.18], [0.14, 0.19], [0.17, 0.19], [0.06, 0.19], [0.15, 0.19], [0.15, 0.2], [0.07, 0.2], [0.14, 0.18], [0.14, 0.18], [0.06, 0.2], [0.03, 0.2], [0.1, 0.18], [0.12, 0.17], [0.1, 0.2], [0.08, 0.18], [0.07, 0.2], [0.12, 0.19], [0.06, 0.2], [0.09, 0.19], [0.1, 0.19], [0.06, 0.19], [0.06, 0.19], [0.05, 0.2], [0.06, 0.16], [0.03, 0.17], [0.04, 0.19], [0.03, 0.19], [0.05, 0.19], [0.04, 0.19], [0.03, 0.2]]
+    # brkga
+    helice = [[0.24, 0.07], [0.3, 0.12], [0.27, 0.13], [0.29, 0.2], [0.26, 0.09], [0.26, 0.19], [0.26, 0.19], [0.25, 0.18], [0.29, 0.17], [0.27, 0.17], [0.24, 0.18], [0.17, 0.2], [0.26, 0.2], [0.22, 0.19], [0.23, 0.2], [0.16, 0.19], [0.16, 0.18], [0.24, 0.2], [0.22, 0.19], [0.21, 0.19], [0.14, 0.18], [0.05, 0.19], [0.18, 0.16], [0.2, 0.19], [0.1, 0.18], [0.15, 0.19], [0.17, 0.2], [0.03, 0.16], [0.08, 0.19], [0.05, 0.2], [0.1, 0.2], [0.13, 0.18], [0.01, 0.2], [0.12, 0.17], [0.09, 0.18], [0.05, 0.19], [0.1, 0.19], [0.07, 0.19], [0.07, 0.18], [0.02, 0.18], [0.08, 0.19], [0.05, 0.18], [0.07, 0.19], [0.01, 0.18], [0.04, 0.18], [-0.02, 0.19], [0.04, 0.18], [0.06, 0.19], [0.04, 0.19], [0.02, 0.19]]
+    for i in range(7, 26):
+        valores_potencia(helice, i)
+    
+def valores_potencia(helice, vento):
+    print(f'{vento} - {fitness_adaptado(helice, vento)}')
 
 
-def fitness_grafico_potencia(helice):
+# def fitness_grafico_potencia(helice):
+#     global V
+#     global omega
+#     global dens_ar
+
+#     apartir = 4
+
+#     V = 8  # velocidade do vento
+#     omega = 634.56
+#     #omega = 434.56
+#     omega = omega * math.pi / 30  # velocidade da rotação de rpm para radianos
+#     dens_ar = 1.225  # densidade do ar
+#     potencias_obtidas = []
+
+#     for vento in range(apartir, V + 1):
+#         potencia_maxima = torque(helice, vento)
+#         if potencia_maxima > 0:
+#             potencias_obtidas.append(torque(helice, vento))
+#         else:
+#             potencias_obtidas.append(0)
+            
+#     print(max(potencias_obtidas))
+
+#     T = numpy.array([i for i in range(apartir, V + 1)])
+#     xnew = numpy.linspace(T.min(), T.max(), 300)
+
+#     spl = make_interp_spline([i for i in range(apartir, V + 1)], potencias_obtidas, k=3)
+#     power_smooth = spl(xnew)
+#     plt.plot(xnew, power_smooth)
+#     plt.title(f"Curva de Potência - Otimização a {V-13}m/s")
+#     plt.ylabel("Potência (W)")
+#     plt.xlabel("Velocidade do vento (m/s)")
+#     fig1 = plt.gcf()
+#     plt.draw()
+#     fig1.savefig("graficos/curva_de_potencia")
+#     plt.show()
+
+#     return potencias_obtidas[-1]
+
+
+def gerar_grafico_potencia(helice):
     global V
     global omega
     global dens_ar
-
-    V = 20  # velocidade do vento
+    
+    V = 12
     omega = 634.56
-    omega = omega * math.pi / 30  # velocidade da rotação de rpm para radianos
+    omega = omega * math.pi / 40  # velocidade da rotação
     dens_ar = 1.225  # densidade do ar
+    
     potencias_obtidas = []
-
-    for vento in range(10, V + 1):
-        potencia_maxima = torque(helice, vento)
-        if potencia_maxima > 0:
-            potencias_obtidas.append(torque(helice, vento))
+    espaco_grafico = (4, 20)
+    
+    for vento in range(espaco_grafico[1]):
+        potencia = torque(helice, vento)
+        print(f'{vento} - {potencia}')
+        if potencia > 0 and V <= vento:
+            potencias_obtidas.append(potencia)
         else:
+            #print(f'teste {vento}')
             potencias_obtidas.append(0)
-
-    T = numpy.array([i for i in range(10, V + 1)])
+            
+    print(potencias_obtidas)
+        
+    T = numpy.array([i for i in range(espaco_grafico[1])])
     xnew = numpy.linspace(T.min(), T.max(), 300)
-
-    spl = make_interp_spline([i for i in range(10, V + 1)], potencias_obtidas, k=3)
+    
+    spl = make_interp_spline([i for i in range(espaco_grafico[1])], potencias_obtidas, k=3)
     power_smooth = spl(xnew)
     plt.plot(xnew, power_smooth)
-    plt.title("Curva de Potência")
+    plt.title(f"Curva de Potência - Otimização a {V}m/s")
     plt.ylabel("Potência (W)")
     plt.xlabel("Velocidade do vento (m/s)")
     fig1 = plt.gcf()
@@ -61,15 +132,30 @@ def fitness_grafico_potencia(helice):
     plt.show()
 
     return potencias_obtidas[-1]
+    
 
+def fitness_adaptado(helice, vento):
+    global V
+    global omega
+    global dens_ar
+
+    V = vento # velocidade do vento
+    Omega = 634.56
+    #Omega = 400.00
+    omega = Omega * math.pi / 30  # velocidade da rotação de rpm para radianos
+    dens_ar = 1.225  # densidade do ar
+
+    potenciaMaxima = torque(helice, V)
+    return potenciaMaxima
 
 def fitness(helice):
     global V
     global omega
     global dens_ar
 
-    V = 12  # velocidade do vento
+    V = 12 # velocidade do vento
     Omega = 634.56
+    # Omega = 400.00
     omega = Omega * math.pi / 30  # velocidade da rotação de rpm para radianos
     dens_ar = 1.225  # densidade do ar
 

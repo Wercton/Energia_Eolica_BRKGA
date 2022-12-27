@@ -5,6 +5,7 @@ import Populacao
 import Selecao
 import Reproducao
 from Brkga import BRKGA
+import Funcao_fitness
 
 filterwarnings('ignore', 'The iteration is not making good progress')
 
@@ -21,7 +22,7 @@ def brkga(individuos, genes, geracao, mutantes_quantidade):
         populacao = Populacao.criar_populacao(individuos, genes)
 
         for geracao_atual in range(geracao):
-            
+            # print(geracao_atual)
             populacao = np.squeeze(np.asanyarray(populacao))  # transforma população em array numpy
             fitness_populacao = Populacao.geral_fitness(populacao)
             populacao = populacao.tolist()  # torna o array lista outra vez
@@ -34,9 +35,13 @@ def brkga(individuos, genes, geracao, mutantes_quantidade):
 
             mutante = Populacao.criar_populacao(mutantes_quantidade, genes)
             [populacao.append(*cromossomo) for cromossomo in mutante]
-
+            
+            populacao_completa = elite + nao_elite
             for _ in range(individuos - len(populacao)):
-                populacao.append(Reproducao.produzir_filho(elite, nao_elite))
+                # RKGA
+                populacao.append(Reproducao.produzir_filho(populacao_completa, populacao_completa))
+                # BRKGA
+                # populacao.append(Reproducao.produzir_filho(elite, populacao_completa))
 
             # exibir_dados(geracao_atual, melhor_solucao_geracao)
             print(geracao_atual, end=" ")
@@ -45,6 +50,8 @@ def brkga(individuos, genes, geracao, mutantes_quantidade):
                 melhor_solucao_geral = melhor_solucao_geracao
 
             melhores_solucoes.append(melhor_solucao_geral[1])
+            
+            print(f'{geracao_atual} - {melhor_solucao_geral[1]}')
 
     print("\n\nFitness do melhor indíviduo encontrado:", melhor_solucao_geral[1])
     print("Indivíduo: ", [i for i in melhor_solucao_geral[0]], sep="\n\n")
@@ -78,11 +85,12 @@ def plottar_grafico(melhores_solucoes, individuos, mutantes_quantidade):
 
 
 if __name__ == '__main__':
-    '''for _ in range(100):
-        brkga(individuos=10, genes=50, geracao=10, mutantes_quantidade=3)
-    '''
-
-    brkga = BRKGA(generations=100, individuos=50, genes=50, qtd_mutations=7)
-    brkga.plottar_grafico()
-    brkga.gerar_relatorio()
+    for _ in range(1):
+        brkga(individuos=50, genes=50, geracao=500, mutantes_quantidade=4)
     
+
+    # brkga = BRKGA(generations=100, individuos=50, genes=50, qtd_mutations=4)
+    # brkga.plottar_grafico()
+    # brkga.gerar_relatorio()
+    
+    # Funcao_fitness.main()

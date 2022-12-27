@@ -24,7 +24,11 @@ class BRKGA:
         self.populacao = []
         self.inicializar_valores()
         
-        self.populacionar(self.populacao, self.individuos)
+        # self.populacao.append([[[0.26, 0.14], [0.26, 0.05], [0.02, 0.13], [0.2, 0.09], [0.18, 0.14], [0.26, 0.14], [0.12, 0.06], [0.26, 0.11], [-0.02, 0.1], [0.24, 0.17], [0.16, 0.17], [0.01, 0.18], [0.05, 0.13], [0.27, 0.08], [0.08, 0.14], [0.25, 0.09], [0.28, 0.17], [0.01, 0.09], [0.06, 0.19], [0.22, 0.06], [0.21, 0.14], [0.22, 0.1], [-0.02, 0.13], [0.08, 0.16], [0.21, 0.11], [0.04, 0.08], [0.16, 0.1], [0.16, 0.19], [0.03, 0.16], [0.09, 0.13], [0.1, 0.11], [0.26, 0.06], [0.05, 0.13], [0.07, 0.1], [0.18, 0.1], [0.18, 0.15], [0.18, 0.2], [-0.03, 0.07], [0.11, 0.14], [-0.01, 0.1], [0.2, 0.1], [0.03, 0.19], [-0.02, 0.17], [-0.01, 0.19], [0.1, 0.08], [0.09, 0.07], [0.05, 0.13], [0.06, 0.2], [0.06, 0.12], [0.11, 0.2]]])
+        # self.populacao.append([[[0.23, 0.16], [0.22, 0.17], [0.14, 0.06], [0.12, 0.06], [0.15, 0.08], [0.12, 0.08], [0.25, 0.14], [0.28, 0.08], [0.24, 0.14], [0.21, 0.15], [0.23, 0.17], [0.28, 0.1], [0.17, 0.18], [0.09, 0.16], [0.2, 0.16], [0.15, 0.19], [0.27, 0.18], [0.28, 0.07], [0.3, 0.12], [0.17, 0.17], [0.19, 0.2], [0.22, 0.19], [0.2, 0.2], [0.21, 0.16], [0.11, 0.19], [0.16, 0.18], [0.23, 0.16], [0.05, 0.15], [0.07, 0.09], [0.1, 0.14], [0.03, 0.16], [0.06, 0.12], [0.1, 0.19], [0.12, 0.15], [0.05, 0.2], [0.1, 0.19], [0.07, 0.14], [0.07, 0.16], [-0.01, 0.19], [-0.02, 0.16], [0.09, 0.19], [0.07, 0.18], [0.05, 0.18], [0.01, 0.1], [0.04, 0.18], [-0.03, 0.19], [-0.01, 0.18], [0.08, 0.19], [0.06, 0.19], [0.05, 0.07]]])
+        self.populacao.append([[[0.26, 0.14], [0.26, 0.05], [0.02, 0.13], [0.2, 0.09], [0.18, 0.14], [0.26, 0.14], [0.12, 0.06], [0.26, 0.11], [-0.02, 0.1], [0.24, 0.17], [0.16, 0.17], [0.01, 0.18], [0.05, 0.13], [0.27, 0.08], [0.08, 0.14], [0.25, 0.09], [0.28, 0.17], [0.01, 0.09], [0.06, 0.19], [0.22, 0.06], [0.21, 0.14], [0.22, 0.1], [-0.02, 0.13], [0.08, 0.16], [0.21, 0.11], [0.04, 0.08], [0.16, 0.1], [0.16, 0.19], [0.03, 0.16], [0.09, 0.13], [0.1, 0.11], [0.26, 0.06], [0.05, 0.13], [0.07, 0.1], [0.18, 0.1], [0.18, 0.15], [0.18, 0.2], [-0.03, 0.07], [0.11, 0.14], [-0.01, 0.1], [0.2, 0.1], [0.03, 0.19], [-0.02, 0.17], [-0.01, 0.19], [0.1, 0.08], [0.09, 0.07], [0.05, 0.13], [0.06, 0.2], [0.06, 0.12], [0.11, 0.2]]])
+
+        self.populacionar(self.populacao, self.individuos-1)
         for generation in range(self.generations):
             self.inicializar_valores()
             self.get_fitness()
@@ -76,12 +80,27 @@ class BRKGA:
 
     def produzir_filhos(self):
         for _ in range(self.individuos - len(self.nova_populacao)):
+            
+            pop_total = self.elite + self.non_elite
+            
             pai1 = self.escolher_pai(self.elite)
-            pai2 = self.escolher_pai(self.non_elite)
+            pai2 = self.escolher_pai(pop_total)
             filho = []
-
+            
+            # print(pai1)
+            
+            # fit1 = self.elite.index(pai1)
+            # fit2 = pop_total.index(pai2)
+            
+            # print(fit2)
+            
+            # if fit2 < fit1:
+            #     aux = pai2
+            #     pai2 = pai1
+            #     pai1 = aux
+            
             for i in range(len(pai1)):
-                if random() > 0.5:
+                if random() < 0.7:
                     filho.append(pai1[i])
                 else:
                     filho.append(pai2[i])
@@ -136,7 +155,7 @@ class BRKGA:
         return "{0:03}".format(len(onlyfiles) + 1)
     
     def gerar_relatorio(self):
-        filename = 'graficos/' + self.versao + "_relatorio"
+        filename = 'graficos/' + self.versao + "_relatorio.txt"
         text = "Número de gerações: {n_gen}\nIndivíduos: {n_indi}\nGenes: {n_genes}\nMutantes: {n_mut}\n".format(n_gen = self.generations, n_indi = self.individuos, n_genes = self.genes, n_mut = self.qtd_mutations)
         text += f'Melhor fitness: {self.melhor_solucao_geral[1]}\n\n'
         
@@ -144,7 +163,9 @@ class BRKGA:
         for gene in self.melhor_solucao_geral[0][0]:
             text += f'{n} | {gene[0]} | {gene[1]}\n'
             n += 1
-            
+        
+        text += f'\n{self.melhor_solucao_geracao[0][0]}'
+        
         with open(filename, 'w') as f:
             f.write(text)
 
